@@ -1,0 +1,40 @@
+{% include 'loginapp/header.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+    <h2><i>Leave a Message...</i></h2>
+
+    <table border="1" cellspacing="5" cellpadding="10" width="50%">
+        <form name="formname" method="post" action="{% url 'contactus' %}">
+        {%csrf_token%}
+             {% load static %}<img src="{% static 'contactus2.jpg' %}" alt="contactus ogo" align="top">
+            <br><br>
+            <tr>
+               <td><label>Name</label></td>
+               <td><input type="text" name="name" id="name" required=""></td>
+            </tr>
+             <tr>
+               <td><label>Email</label></td>
+               <td><input type="text" name="email" id="email" required=""></td>
+             </tr>
+             <tr>
+               <td><label>Mobile number</label></td>
+               <td><input type="text" name="mobilenumber" id="mobilenumber" required=""></td>
+             </tr>
+            <tr>
+            <td>Message</td><td><textarea rows="5" cols="20" name="message" id="message"></textarea></td>
+        </tr>
+         <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Send message">
+            </td>
+         </tr>
+
+
+        </form>
+    </table>
+</center>
+
+<br><br><br><br><br><br><br>
+{% include 'loginapp/footer.html' %}

@@ -1,0 +1,57 @@
+{% include 'bankapp/bankheader.html' %}
+{% load static %}
+<br><br>  <!-- communication with registered blood banks from db-->
+<center>
+   <h2>Request to Blood Banks</h2>
+    <br><br>
+
+  <table border="2" bordercolor="red" cellpadding="5" cellspacing="10" width="50%">
+
+    <form name="formname" method="post" action="">
+     {%csrf_token%}
+        <tr>
+            <td><label>Bloodbank</label></td>
+                 <td>
+                       <select name="bloodbank" required="">
+                              <option value="0">Select one</option>
+                              <option value="Idukki">Idukki bloodbank</option>
+                              <option value="alappuzha">Alappuzha bloodbank</option>
+                              <option value="ernakulam">Ernakulam bloodbank</option>
+                              <option value="thrissur">Thrissur bloodbank</option>
+
+                 </td>
+                       </select>
+        </tr>
+
+      <tr>
+            <td>Bloodgroups</td>
+            <td>
+                <input type="checkbox"name="a" value="a1">A+ve<br>
+                <input type="checkbox" name="b" value="b1">A-ve<br>
+                <input type="checkbox" name="c" value="c1">B+ve<br>
+                <input type="checkbox" name="d" value="d1">B-ve<br>
+                <input type="checkbox" name="e" value="e1">AB+ve<br>
+                 <input type="checkbox" name="e" value="e1">AB-ve<br>
+                 <input type="checkbox" name="e" value="e1">O+ve<br>
+                 <input type="checkbox" name="e" value="e1">O-ve
+            </td>
+      </tr>
+       <tr>
+            <td><label>Quantity Required</label></td>
+            <td><input type="text" name="quantity" required=""></td>
+        </tr>
+        <tr>
+            <td>Other Details</td><td><textarea rows="5" cols="20"></textarea></td>
+        </tr>
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="send">
+
+            </td>
+        </tr>
+      </form>
+  </table>
+</center>
+<br><br><br>
+{% include 'loginapp/footer.html' %}
+

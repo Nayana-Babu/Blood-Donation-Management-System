@@ -1,0 +1,54 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+  <!--{% load static %}<img src="{% static 'search.jpg' %}" alt="Cinque Terre" width="50" height="50"><h1>Search</h1>-->
+<h2>Bloodbank Details</h2>
+    <br>
+<table border="1" cellpadding="2" cellspacing="2" width="50%">
+ <tr>
+        <th>Bankname</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Apositive</th>
+        <th>Anegative</th>
+        <th>Bpositive</th>
+        <th>Bnegative</th>
+        <th>ABpositive</th>
+        <th>ABnegative</th>
+        <th>Opositive</th>
+        <th>Onegative</th>
+        <th>Action</th>
+
+        {% for b in bank1 %}
+
+       <tr>
+            <td>{{ b.Bankname }}</td>
+        <td>{{ b.Address }}</td>
+        <td>{{ b.Phone }}</td>
+        <td>{{ b.Email }}</td>
+        <td>{{ b.Apositive }}</td>
+        <td>{{ b.Anegative }}</td>
+        <td>{{ b.Bpositive }}</td>
+        <td>{{ b.Bnegative }}</td>
+        <td>{{ b.ABpositive }}</td>
+        <td>{{ b.ABnegative }}</td>
+        <td>{{ b.Opositive }}</td>
+        <td>{{ b.Onegative }}</td>
+
+     <td><a href="{% url 'editbank' b.id %}">
+               <button class="btn btn-info" label="view request">Edit</button></a></td>
+         <td><a href="{% url 'bankdelete' b.id %}">
+                <button class="btn btn-info" label="view request">Delete</button>
+            </a></td>
+
+
+                </tr>
+       {% endfor %}
+</table>
+</center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

@@ -1,0 +1,41 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br><br><br><br>
+
+<center>
+  <h2>Camp Details</h2>
+    <br><br>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+     <tr>
+        <th>Campname</th>
+        <th>Venue</th>
+        <th>Photo</th>
+        <th>CampDate</th>
+        <th>Details</th>
+         <th>Action</th>
+
+
+        {% for c in camp1 %}
+
+       <tr>
+            <td>{{ c.Campname }}</td>
+        <td>{{ c.Venue }}</td>
+        <td>{{ c.Photo }}</td>
+        <td>{{ c.CampDate }}</td>
+        <td>{{ c.Details }}</td>
+
+        <td><a href="{% url 'editcamp' c.id %}">
+               <button class="btn btn-info" label="view request">Edit</button></a></td>
+         <td><a href="{% url 'campdelete' c.id %}">
+             <button class="btn btn-info" label="view request">Delete</button></a></td>
+
+
+
+
+                </tr>
+       {% endfor %}
+</table>
+</center>
+
+<br><br><br>

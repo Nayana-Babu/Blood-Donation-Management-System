@@ -1,0 +1,56 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br><br><br><br>
+
+<center>
+  <h2>All User Details</h2>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+     <tr>
+        <th>Fullname</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Bloodbank</th>
+         <th>Age</th>
+         <th>Email</th>
+        <th>Mobilenumber</th>
+         <th>Bloodgroup</th>
+         <th>Category</th>
+        <th>Action</th>
+    </tr>
+
+         {% for s in user1 %}
+    <tr>
+        <td>{{ s.Fullname }}</td>
+        <td>{{ s.Address }}</td>
+        <td>{{ s.Gender }}</td>
+        <td>{{ s.Bloodbank }}</td>
+        <td>{{ s.Age }}</td>
+        <td>{{ s.Email }}</td>
+        <td>{{ s.Mobilenumber }}</td>
+        <td>{{ s.Bloodgroup }}</td>
+
+
+        <td>{{ s.Category }}</td>
+        <td><a href="{% url 'edituser' s.id %}">
+               <button class="btn btn-info" label="view request">Edit</button></a></td>
+         <td><a href="{% url 'delete' s.login_id %}">
+                <button class="btn btn-info" label="view request">Delete</button>
+            </a></td>
+
+
+
+
+        {% endfor %}
+
+    </tr>
+</table>
+</center>
+
+
+
+
+
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

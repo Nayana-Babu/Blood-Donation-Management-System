@@ -1,0 +1,43 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br>
+<center>
+
+  <form class="form-horizontal" action="{% url 'editcamp' detail1.id %}" method="post">
+    {% csrf_token %}
+<table align ="center" border="1" width="500" height="400">
+   <tr>
+        <td colspan ="5" align="center">Edit Camp Details</td>
+   </tr>
+
+        <tr>
+            <th>Campname</th><td><input type="text" name="campname" value="{{detail1.Campname}}"></td>
+        </tr>
+        <tr>
+            <th>Venue</th><td><input type="text" name="venue" value="{{detail1.Venue}}"></td>
+
+        </tr>
+  <tr>
+            <th>Photo</th><td><input type="text" name="photo" value="{{ detail1.Photo }}"></td>
+
+        </tr>
+
+  <tr>
+            <th>Details</th><td><input type="text" name="details" value="{{ detail1.Details }}"></td>
+
+        </tr>
+
+   <tr>
+        <td colspan="2" align="center" >
+                <button type="submit">Update</button>
+            </td>
+    </tr>
+</table>
+</form>
+    <br><br>
+{% include 'loginapp/footer.html' %}
+
+
+
+</center>

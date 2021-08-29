@@ -1,0 +1,157 @@
+{% include 'loginapp/header.html' %}
+{% load static %}
+<br><br><br>
+<head>
+     <script src="{% static 'jquery-1.7.1.min.js' %}"></script>
+    <script type="text/javascript" language="javascript">
+        function validation(str)
+        {
+          if (window.XMLHttpRequest)
+             {
+             xmlhttp=new XMLHttpRequest();
+             }
+          xmlhttp.onreadystatechange=function()
+            {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+              {
+                document.getElementById("hai").innerHTML=xmlhttp.responseText;
+              }
+            }
+          xmlhttp.open("GET","{% url 'checkusername' %}?id="+str,true);
+          xmlhttp.send(null);
+        }
+
+
+    </script>
+    <script>
+    $(document).ready(function(){
+
+  $("#mobile-num").on("blur", function(){
+        var mobNum = $(this).val();
+        var filter = /^\d*(?:\.\d{1,2})?$/;
+
+          if (filter.test(mobNum)) {
+            if(mobNum.length==10){
+                  alert("valid");
+              $("#mobile-valid").removeClass("hidden");
+              $("#folio-invalid").addClass("hidden");
+             } else {
+                alert('Please put 10  digit mobile number');
+               $("#folio-invalid").removeClass("hidden");
+               $("#mobile-valid").addClass("hidden");
+                return false;
+              }
+            }
+            else {
+              alert('Not a valid number');
+              $("#folio-invalid").removeClass("hidden");
+              $("#mobile-valid").addClass("hidden");
+              return false;
+           }
+
+  });
+
+});
+
+    </script>
+</head>
+
+<center>
+    <h2>Registration</h2>
+    <br>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+    <form name="formname" method="post" action="{% url 'userregister' %}">
+     {%csrf_token%}
+         <tr>
+            <td><label>Fullname</label></td>
+            <td><input type="text" name="fullname" required=""></td>
+        </tr>
+        <tr>
+            <td><label>Address</label></td>
+            <td><input type="text" name="address" required=""></td>
+        </tr>
+         <tr>
+        <td><label>Gender</label></td>
+        <td><input type="radio" name="gender" value="male"> Male
+            <input type="radio" name="gender" value="female"> Female
+            <input type="radio" name="gender" value="others"> Others</td>
+        </tr>
+        <tr>
+          <td><label>Bloodbank</label></td>
+            <td>
+                <select name="bloodbank" required="">
+                    <option value="0">Select one</option>
+                    <option value="Idukki">Idukki bloodbank</option>
+                    <option value="alappuzha">Alappuzha bloodbank</option>
+                    <option value="ernakulam">Ernakulam bloodbank</option>
+                    <option value="thrissur">Thrissur bloodbank</option>
+
+            </td>
+                </select>
+        </tr>
+
+         <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" name="age" required=""></td>
+        </tr>
+         <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email" required=""></td>
+        </tr>
+         <tr>
+            <td><label>Mobile Number</label></td>
+            <td><input type="text" name="mobilenumber" id="mobile-num" required="">
+            </td>
+        </tr>
+        <tr>
+
+        <td><label>Blood Group</label></td>
+            <td>
+                <select name="bloodgroup" required="">
+                    <option value="0">Select one</option>
+                    <option value="a+">A +ve</option>
+                    <option value="a-">A -ve</option>
+                    <option value="b+">B +ve</option>
+                    <option value="b-">B -ve</option>
+                    <option value="ab+">AB +ve</option>
+                    <option value="ab-">AB -ve</option>
+                    <option value="o+">O +ve</option>
+                    <option value="o-">O -ve</option>
+                    <option value="others">others</option>
+                </select>
+            </td>
+  </tr>
+
+
+        <tr>
+            <td><label>Username</label></td>
+            <td><input type="username" name="username" required="" onchange="validation(this.value)"><div style="color:red;" id="hai"></div></td>
+        </tr>
+         <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" name="password" required=""></td>
+        </tr>
+          <tr>
+                <td><label>Category</label></td>
+                <td>
+                    <select name="category" required="">
+                        <option value="0">Select one</option>
+
+                        <option value="donor">Donor</option>
+                        <option value="patient">Patient</option>
+
+                       
+                    </select>
+                </td>
+            </tr>
+
+        <tr>
+                <td colspan="2" align="center"><input type="submit" value="register" name="sub"></td>
+                </tr>
+
+    </form>
+</table>
+    </center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

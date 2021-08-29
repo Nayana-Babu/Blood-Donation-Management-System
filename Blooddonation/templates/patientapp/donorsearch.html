@@ -1,0 +1,44 @@
+{% include 'patientapp/patientheader.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+
+<h2>View Details</h2>
+<table border="1" cellpadding="5" cellspacing="5" width="50%" class="table-info">
+ <tr>
+        <th scope="row">Fullname</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Bloodbank</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Mobilenumber</th>
+        <th>Bloodgroup</th>
+        <th>Category</th>
+        <th>Action</th>
+
+
+        {% for u in user1 %}
+
+       <tr>
+            <td>{{ u.Fullname }}</td>
+        <td>{{ u.Address }}</td>
+        <td>{{ u.Gender }}</td>
+        <td>{{ u.Bloodbank }}</td>
+        <td>{{ u.Age }}</td>
+        <td>{{ u.Email }}</td>
+        <td>{{ u.Mobilenumber }}</td>
+        <td>{{ u.Bloodgroup }}</td>
+        <td>{{ u.Category }}</td>
+        <td><a href="{% url 'sendrequest' %}">
+                <button class="btn btn-info" label="Send Request">Send request</button></a></td>
+
+
+                </tr>
+       {% endfor %}
+</table>
+</center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

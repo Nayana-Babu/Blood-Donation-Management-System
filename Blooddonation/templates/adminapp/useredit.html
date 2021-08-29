@@ -1,0 +1,57 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br>
+
+<center>
+    <form class="form-horizontal" action="{% url 'edituser' detail1.id %}" method="post">
+    {% csrf_token %}
+<table align ="center" border="1" width="500" height="400">
+   <tr>
+        <td colspan ="5" align="center">View User Details</td>
+   </tr>
+
+        <tr>
+            <th>Fullname</th><td><input type="text" name="fullname" value="{{detail1.Fullname}}"></td>
+        </tr>
+        <tr>
+            <th>Address</th><td><input type="text" name="address" value="{{detail1.Address}}"></td>
+
+        </tr>
+  <tr>
+            <th>Gender</th><td><input type="text" name="gender" value="{{ detail1.Gender }}"></td>
+
+        </tr>
+  <tr>
+            <th>Bloodbank</th><td><input type="text" name="bloodbank" value="{{ detail1.Bloodbank }}"></td>
+
+        </tr>
+  <tr>
+            <th>Age</th><td><input type="text" name="age" value="{{ detail1.Age }}"></td>
+
+        </tr>
+  <tr>
+            <th>Email</th><td><input type="text" name="email" value="{{ detail1.Email }}"></td>
+
+        </tr>
+  <tr>
+            <th>Mobilenumber</th><td><input type="text" name="mobilenumber" value="{{ detail1.Mobilenumber }}"></td>
+
+        </tr>
+  <tr>
+            <th>Bloodgroup</th><td><input type="text" name="bloodgroup" value="{{ detail1.Bloodgroup }}"></td>
+
+        </tr>
+  <tr>
+            <th>Category</th><td><input type="text" name="category" value="{{ detail1.Category }}"></td>
+
+        </tr>
+   <tr>
+        <td colspan="2" align="center" >
+                <button type="submit">Update</button>
+            </td>
+    </tr>
+</table>
+</form>
+    <br><br>
+{% include 'loginapp/footer.html' %}

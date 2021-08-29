@@ -1,0 +1,49 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+
+
+<br><br><br>
+
+
+<h2>Add New Camps</h2>
+    <br>
+<table border="1" cellspacing="2" cellpadding="2" width="50%">
+    <form name="frm" method="post" action="{% url 'uploadprocess' %}" enctype="multipart/form-data">
+                 {%csrf_token%}
+        <tr>
+            <td><label>Camp Name</label>
+                <input type="text" name="campname"></td>
+        </tr>
+        <tr>
+            <td><label>Venue</label>
+                <input type="text" name="venue"></td>
+        </tr>
+        <tr>
+            <td><label>Photo</label>
+                <input type="file" name="photo"></td>
+        </tr>
+         <tr>
+        <td><label>Camp date</label></td>
+        <td><input type="date" name="begin"
+		placeholder="yyyy-mm-dd" value=""
+		min="1997-01-01" max="2030-12-31"> </td>
+        </tr>
+         <tr>
+            <td>Details</td><td><textarea rows="5" cols="20" name="details"></textarea></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center"><input type="submit" value="upload" name="sub"></td>
+        </tr>
+    </form>
+</table>
+
+</center>
+
+
+
+<br><br><br><br><br>
+{% include 'loginapp/footer.html' %}

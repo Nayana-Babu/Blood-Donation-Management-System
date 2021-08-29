@@ -1,0 +1,40 @@
+{% include 'bankapp/bankheader.html' %}
+{% load static %}
+<br><br>  <!--data need to fetch from db-->
+<center>
+  <table border="2" bordercolor="red" cellpadding="5" cellspacing="10" width="50%">
+ <tr>
+        <th>Bankname</th>
+        <th>Address</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Apositive</th>
+        <th>Anegative</th>
+        <th>Bpositive</th>
+        <th>Bnegative</th>
+        <th>ABpositive</th>
+     <th>ABnegative</th>
+     <th>Opositive</th>
+     <th>Onegative</th>
+
+    </tr>
+    {% for s in stocks1 %}
+    <tr>
+        <td>{{ s.Bankname }}</td>
+        <td>{{ s.Address }}</td>
+        <td>{{ s.Phone }}</td>
+        <td>{{ s.Email }}</td>
+        <td>{{ s.Apositive }}</td>
+        <td>{{ s.Anegative }}</td>
+        <td>{{ s.Bpositive }}</td>
+        <td>{{ s.Bnegative }}</td>
+        <td>{{ s.ABpositive }}</td>
+        <td>{{ s.ABnegative }}</td>
+        <td>{{ s.Opositive }}</td>
+        <td>{{ s.Onegative }}</td>
+      {% endfor %}
+    </tr>
+</table>
+</center>
+<br><br><br>
+{% include 'loginapp/footer.html' %}

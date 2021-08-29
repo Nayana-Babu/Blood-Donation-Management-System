@@ -1,0 +1,55 @@
+{% include 'donorapp/donorheader.html' %}
+{% load static %}
+
+<br><br><br><br>
+
+<center>
+    <h2>Update Details</h2>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+    <form name="formname" method="post" action="{% url 'editprofile' detail1.id %}">
+     {%csrf_token%}
+         <tr>
+             <td><label>Fullname</label></td>
+            <td><input type="text" name="fullname" value="{{ detail1.Fullname }}"></td>
+        </tr>
+         <tr>
+             <td><label>Address</label></td>
+            <td><input type="text" name="address" value="{{ detail1.Address }}"></td>
+        </tr>
+         <tr>
+        <td><label>Gender</label></td>
+             <td><input type="text" name="gender" value="{{ detail1.Gender }}"></td>
+
+        </tr>
+         <tr>
+        <td><label>Bloodbank</label></td>
+             <td><input type="text" name="bloodbank" value="{{ detail1.Bloodbank }}"></td>
+
+        </tr>
+         <tr>
+            <td><label>Age</label></td>
+            <td><input type="text" name="age" value="{{ detail1.Age }}"></td>
+        </tr>
+         <tr>
+             <td><label>Email</label></td>
+            <td><input type="email" name="email" value="{{ detail1.Email }}"></td>
+        </tr>
+         <tr>
+            <td><label>MobileNumber</label></td>
+            <td><input type="text" name="mobilenumber" value="{{ detail1.Mobilenumber }}"></td>
+        </tr>
+         <tr>
+            <td><label>Bloodgroup</label></td>
+            <td><input type="text" name="bloodgroup" value="{{ detail1.Bloodgroup }}"></td>
+        </tr>
+
+        <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Update">
+            </td>
+         </tr>
+    </form>
+    </table>
+</center>
+<br><br><br><br>
+{% include 'loginapp/footer.html' %}

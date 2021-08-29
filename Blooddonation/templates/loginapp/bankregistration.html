@@ -1,0 +1,78 @@
+{% include 'loginapp/header.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+    <h2>Bank Registration</h2>
+    <br>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+    <form name="formname" method="post" action="{% url 'bankregister' %}">
+     {%csrf_token%}
+         <tr>
+            <td><label>Bankname</label></td>
+            <td><input type="text" name="bankname" required=""></td>
+        </tr>
+        <tr>
+            <td><label>Address</label></td>
+            <td><input type="text" name="address" required=""></td>
+        </tr>
+
+         <tr>
+            <td><label>Phone</label></td>
+            <td><input type="text" name="phone" required=""></td>
+        </tr>
+        <tr>
+            <td><label>Email</label></td>
+            <td><input type="email" name="email" required=""></td>
+        </tr>
+       <tr>
+           <th><label>Stock</label></th>
+           <th><label>Unit</label></th>
+  </tr>
+        <tr>
+            <td>A+ve</td>
+            <td><input type="number" name="a+"></td>
+        </tr>
+        <tr>
+            <td>A-ve</td>
+            <td><input type="number" name="a-"></td>
+        </tr>
+        <tr>
+            <td>B+ve</td>
+            <td><input type="number" name="b+"></td>
+        </tr>
+        <tr>
+            <td>B-ve</td>
+            <td><input type="number" name="b-"></td>
+        </tr>
+        <tr>
+            <td>AB+ve</td>
+            <td><input type="number" name="ab+"></td>
+        </tr>
+        <tr>
+            <td>AB-ve</td>
+            <td><input type="number" name="ab-"></td>
+        </tr>
+        <tr>
+            <td>O+ve</td>
+            <td><input type="number" name="o+"></td>
+        </tr>
+        <tr>
+            <td>O-ve</td>
+            <td><input type="number" name="o-"></td>
+        </tr>
+
+
+
+
+
+        <tr>
+                <td colspan="2" align="center"><input type="submit" value="register" name="sub"></td>
+                </tr>
+
+    </form>
+</table>
+    </center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

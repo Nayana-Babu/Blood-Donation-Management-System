@@ -1,0 +1,60 @@
+{% include 'patientapp/patientheader.html' %}
+{% load static %}
+
+<br>
+
+<center>
+
+
+    <h2>My Profile</h2>
+        <br>
+
+    <table border="1" cellspacing="2" cellpadding="2" width="50%" >
+    <tr>
+        <th>Fullname</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Bloodbank</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Mobilenumber</th>
+        <th>Bloodgroup</th>
+
+
+
+
+
+        <tr>
+            <td>{{ pt1.Fullname }}</td>
+        <td>{{ pt1.Address }}</td>
+        <td>{{ pt1.Gender }}</td>
+        <td>{{ pt1.Bloodbank }}</td>
+        <td>{{ pt1.Age }}</td>
+        <td>{{ pt1.Email }}</td>
+        <td>{{ pt1.Mobilenumber }}</td>
+        <td>{{ pt1.Bloodgroup }}</td>
+
+
+           <td><a href="{% url 'donorsearch' pt1.Bloodgroup  %}">
+               <button class="btn btn-info" label="Search donors">Search donor</button></a></td>
+           <td><a href="{% url 'banksearch' %}">
+               <button class ="btn btn-warning" label="Search bloodbanks">Search bloodbank</button></a></td>
+
+
+
+
+    </tr>
+
+
+
+
+    </table>
+
+    </form>
+    </table>
+
+
+
+</center>
+<br><br><br><br><br>
+{% include 'loginapp/footer.html' %}

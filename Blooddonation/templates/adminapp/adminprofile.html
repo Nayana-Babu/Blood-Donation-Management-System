@@ -1,0 +1,76 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br>
+
+<center>
+    <nav>
+
+    <a href="{% url 'userdetails' %}">
+               <button class="btn btn-info" label="user details">View User Details</button></a>
+         <a href="{% url 'bankdetails' %}">
+               <button class="btn btn-info" label="bank details">View Bloodbank Details</button></a>
+         <a href="{% url 'requestdetails' %}">
+               <button class="btn btn-info" label="view request">View Requests</button></a>
+        <a href="{% url 'addcamp' %}">
+               <button class="btn btn-info" label="add camps">Add Camps</button></a>
+        <a href="{% url 'campdetails' %}">
+               <button class="btn btn-info" label="camp details">View Camp Details</button></a>
+         <a href="{% url 'messagedetails' %}">
+               <button class="btn btn-info" label="intrest messages">Intrest Messages</button></a>
+
+
+
+
+
+
+</nav>
+<br><br><br>
+
+  <h2>Admin Profile</h2>
+    <br>
+<table border="1" cellspacing="2" cellpadding="2" width="20%">
+    <tr>
+        <td>Fullname</td>
+        <td>Address</td>
+        <td>Gender</td>
+        <td>Bloodbank</td>
+        <td>Age</td>
+        <td>Email</td>
+        <td>Mobilenumber</td>
+        <td>Bloodgroup</td>
+        <td>Category</td>
+
+        <td>Action</td>
+    </tr>
+        <tr>
+            <td>{{ admin1.Fullname }}</td>
+        <td>{{ admin1.Address }}</td>
+        <td>{{ admin1.Gender }}</td>
+        <td>{{ admin1.Bloodbank }}</td>
+        <td>{{ admin1.Age }}</td>
+        <td>{{ admin1.Email }}</td>
+        <td>{{ admin1.Mobilenumber }}</td>
+        <td>{{ admin1.Bloodgroup }}</td>
+            <td>{{ admin1.Category }}</td>
+
+<td><a href="{% url 'adminupdate' admin1.id %}">
+               <button class="btn btn-info" label="view request">Edit</button></a>
+</td>
+
+
+
+
+
+
+
+
+        </tr>
+    </table>
+</center>
+<br><br><br><br><br>
+{% include 'loginapp/footer.html' %}
+
+
+
+

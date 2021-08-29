@@ -1,0 +1,48 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+<br><br><br>
+
+<center>
+  <!--{% load static %}<img src="{% static 'search.jpg' %}" alt="Cinque Terre" width="50" height="50"><h1>Search</h1>-->
+<h2>Request Details</h2>
+    <br>
+<table border="1" cellpadding="2" cellspacing="2" width="50%">
+ <tr>
+        <th>Name</th>
+        <th>Gender</th>
+        <th>Age</th>
+        <th>MobileNumber</th>
+        <th>BloodGroup</th>
+        <th>Email</th>
+        <th>RequiredDate</th>
+        <th>Details</th>
+
+        <th>Action</th>
+
+        {% for d in all1 %}
+
+       <tr>
+            <td>{{ d.Name }}</td>
+        <td>{{ d.Gender }}</td>
+        <td>{{ d.Age }}</td>
+        <td>{{ d.MobileNumber }}</td>
+        <td>{{ d.BloodGroup }}</td>
+        <td>{{ d.Email }}</td>
+        <td>{{ d.RequiredDate }}</td>
+        <td>{{ d.Details }}</td>
+
+
+     <td><a href="{% url 'editrequest' d.id %}">
+               <button class="btn btn-info" label="view request">Edit</button></a></td>
+         <td><a href="{% url 'requestdelete' d.id %}">
+                <button class="btn btn-info" label="view request">Delete</button>
+            </a></td>
+
+
+                </tr>
+       {% endfor %}
+</table>
+</center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

@@ -1,0 +1,54 @@
+{% include 'donorapp/donorheader.html' %}
+{% load static %}
+
+<br><br><br><br>
+
+<center>
+    <h2>Blood Donated Details</h2>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+    <form name="formname" method="post" action="">
+     {%csrf_token%}
+        <tr>
+            <td><label>Select Camp</label></td>
+            <td>
+                <select name="selectcamp" required="">
+                    <option value="0">Select one</option>
+                    <option value="nirmala">Nirmala HSS Aluva</option>
+                    <option value="nirmala">BloodCamp at Aluva</option>
+                    <option value="nirmala">BloodCamp at Muttar</option>
+                    <option value="hospital">Blood camp at kochi</option>
+                    <option value="townhall">Blood camp at pala town</option>
+                    <option value="townhall">Blood camp at gov college Munnar town</option>
+                    <option value="townhall">camp at kottayam</option>
+                    <option value="townhall">Aluva Muncipal Townhall</option>
+                    <option value="nhstrust">NHS Trust,kochi</option>
+                    <option value="Wipro">Wipro Company Infopark</option>
+                    <option value="tcs">Tata consultancy and services</option>
+                    <option value="Mary">Marymatha College,wayanad</option>
+                    <option value="girls">Aluva Girls school</option>
+                </select>
+            </td>
+        </tr>
+         <tr>
+        <td><label>Blood donated date</label></td>
+        <td><input type="date" name="begin"
+		placeholder="dd-mm-yyyy" value=""
+		min="1997-01-01" max="2030-12-31"> </td>
+        </tr>
+        <tr>
+            <td><label>No:of units given</label></td>
+            <td><input type="number" name="number"</td>
+        </tr>
+         <tr>
+            <td>Other Details</td><td><textarea rows="5" cols="20"></textarea></td>
+        </tr>
+         <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Save">
+            </td>
+         </tr>
+    </form>
+    </table>
+</center>
+<br><br><br><br>
+{% include 'loginapp/footer.html' %}

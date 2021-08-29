@@ -1,0 +1,42 @@
+{% include 'bankapp/bankheader.html' %}
+{% load static %}
+<br><br>  <!--data need to fetch from db-->
+<center>
+   <h2>Our Upcoming Camps</h2>
+    <br>
+  <table border="2" bordercolor="red" cellpadding="5" cellspacing="10" width="50%">
+<tr>
+
+
+    <form name="formname" method="post" action="">
+     {%csrf_token%}
+         {% load static %}<img src="{% static 'bankcamp.png' %}" alt="thumbs ip ogo" align="left">
+            <br><br>
+         <tr>
+            <td><label>Camp Name</label></td>
+            <td><input type="text" name="campname" required=""></td>
+        </tr>
+    <tr>
+            <td><label>Venue</label></td>
+            <td><input type="text" name="venue" required=""></td>
+        </tr>
+    <tr>
+            <td><label>Camp Date</label></td>
+            <td><input type="text" name="campdate" required=""></td>
+        </tr>
+             <tr>
+            <td>Other Details</td><td><textarea rows="5" cols="20"></textarea></td>
+        </tr>
+         <tr>
+            <td colspan="2" align="center">
+                <input type="submit" value="Update">
+            </td>
+         </tr>
+
+
+        </form>
+    </table>
+</center>
+
+<br><br><br><br><br><br><br>
+{% include 'loginapp/footer.html' %}

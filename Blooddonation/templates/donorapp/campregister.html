@@ -1,0 +1,70 @@
+{% include 'donorapp/donorheader.html' %}
+{% load static %}
+
+<br>
+
+
+<center>
+   <h2>Camp Register Form</h2>
+    <table border="1" cellpadding="5" cellspacing="5" width="50%">
+    <form name="formname" method="post" action="{% url 'campregister'  %}">
+     {%csrf_token%}
+        <tr>
+             <td><label>Campname</label></td>
+            <td><input type="text" name="campname" value=""></td>
+         </tr>
+         <tr>
+             <td><label>Donorname</label></td>
+            <td><input type="text" name="donorname" value=""></td>
+         </tr>
+        <tr>
+
+        <td><label>Bloodgroup</label></td>
+            <td>
+                <select name="bloodgroup" value="">
+                    <option value="0">Select one</option>
+                    <option value="a+">A +ve</option>
+                    <option value="a-">A -ve</option>
+                    <option value="b+">B +ve</option>
+                    <option value="b-">B -ve</option>
+                    <option value="ab+">AB +ve</option>
+                    <option value="ab-">AB -ve</option>
+                    <option value="o+">O +ve</option>
+                    <option value="o-">O -ve</option>
+
+                </select>
+            </td>
+  </tr>
+         <tr>
+            <td><label>Age</label></td>
+            <td><input type="number" name="age"  value="" ></td>
+        </tr>
+
+         <tr>
+        <td><label>Are You Allergic? </label></td>
+        <td><input type="radio" name="allergy" value="yes"> Yes
+            <input type="radio" name="allergy" value="no"> No
+        </td>
+         </tr>
+        <tr>
+        <td><label>Are You on Medication? </label></td>
+        <td><input type="radio" name="med" value="yes"> Yes
+            <input type="radio" name="med" value="no"> No
+        </td>
+        </tr>
+        <tr>
+        <td><label>Last blood donated date</label></td>
+        <td><input type="date" name="begin" placeholder="yyyy-mm-dd" value=""
+		min="1997-01-01" max="2030-12-31"> </td>
+        </tr>
+
+          <tr>
+                <td colspan="2" align="center"><input type="submit" value="register" name="sub"></td>
+                </tr>
+
+         </form>
+        </table>
+  </center>
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

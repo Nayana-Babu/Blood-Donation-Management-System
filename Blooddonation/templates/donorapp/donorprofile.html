@@ -1,0 +1,50 @@
+{% include 'donorapp/donorheader.html' %}
+{% load static %}
+
+<br>
+
+
+<center>
+
+   {% load static %}<img src="{% static 'wel.jpg' %}" alt="welcome logo" align="middle">
+  <h1><i>"to Donor Panel"</i></h1>
+    <br>
+    <h2>My Profile</h2>
+        <br>
+
+    <table border="1" cellspacing="2" cellpadding="2" width="50%">
+    <tr>
+        <th>Fullname</th>
+        <th>Address</th>
+        <th>Gender</th>
+        <th>Bloodbank</th>
+        <th>Age</th>
+        <th>Email</th>
+        <th>Mobilenumber</th>
+        <th>Bloodgroup</th>
+        <th>Action</th>
+    </tr>
+
+
+        <tr>
+            <td>{{ user1.Fullname }}</td>
+        <td>{{ user1.Address }}</td>
+        <td>{{ user1.Gender }}</td>
+        <td>{{ user1.Bloodbank }}</td>
+        <td>{{ user1.Age }}</td>
+        <td>{{ user1.Email }}</td>
+        <td>{{ user1.Mobilenumber }}</td>
+        <td>{{ user1.Bloodgroup }}</td>
+        <td><a href="{% url 'viewrequest' user1.Bloodgroup %}">
+               <button class="btn btn-info" label="view request">View Request</button></a></td><br>
+        <td><a href="{% url 'editprofile' user1.id %}">
+               <button class="btn btn-info" label="edit profile">Edit Profile</button></a></td>
+            <td><a href="{% url 'viewcamps' %}">
+               <button class="btn btn-info" label="view latest camps">View Latest Camps</button></a></td>
+
+    </tr>
+    </table>
+
+</center>
+<br><br><br><br><br>
+{% include 'loginapp/footer.html' %}

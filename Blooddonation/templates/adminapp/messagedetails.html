@@ -1,0 +1,34 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br>
+<center>
+  <h2>Donor Camp Intrest Messages</h2>
+    <br><br>
+<table border="1" cellpadding="2" cellspacing="2" width="50%">
+ <tr>
+        <th>Campname</th>
+        <th>Donorname</th>
+        <th>Bloodgroup</th>
+        <th>Age</th>
+        <th>Are you allergic ?</th>
+        <th>Are you on medication ?</th>
+        <th>Last blooddonated date</th>
+ </tr>
+    <tr>
+        {% for m in messages %}
+        <td>{{ m.Campname }}</td>
+        <td>{{ m.Donorname }}</td>
+        <td>{{ m.Bloodgroup }}</td>
+        <td>{{ m.Age }}</td>
+        <td>{{ m.Allergic }}</td>
+        <td>{{ m.Medication }}</td>
+        <td>{{ m.Donateddate }}</td>
+
+
+    </tr>
+    {% endfor %}
+</table>
+</center>
+<br><br><br>
+{% include 'loginapp/footer.html' %}

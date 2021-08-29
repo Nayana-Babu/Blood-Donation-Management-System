@@ -1,0 +1,36 @@
+
+{% include 'loginapp/header.html' %}
+{% load static %}
+
+<center>
+    <br><br>
+    <h2>Login </h2>
+
+    <table border="1" cellspacing="10" cellpadding="1" width="5%">
+        <form name="formname" method="post" action="{% url 'loginprocess' %}">
+        {%csrf_token%}
+             {% load static %}<img src="{% static 'lock2.jpg' %}" alt="lock logo" align="middle">
+            <br><br>
+
+            <tr>
+                <td><label>UserName</label></td>
+                <td><input type="text" name="username" required=""></td>
+            </tr>
+
+            <tr>
+                <td><label>Password</label></td>
+                <td><input type="password"  name="password" required=""></td>
+
+            </tr>
+
+                <td colspan="2" align="center"><input type="submit" name="s1" value="login"></td>
+            </tr>
+        </form>
+    </table>
+     <a href="{% url 'userregister' %}">New user?</a>
+    <a href="{% url 'bankregister' %}">Bloodbank?</a>
+</center>
+
+
+<br><br><br>
+{% include 'loginapp/footer.html' %}

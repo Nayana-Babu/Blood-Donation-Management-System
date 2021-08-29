@@ -1,0 +1,75 @@
+{% include 'adminapp/adminheader.html' %}
+{% load static %}
+
+<br>
+
+<center>
+    <form class="form-horizontal" action="{% url 'editbank' detail1.id %}" method="post">
+    {% csrf_token %}
+<table align ="center" border="1" width="500" height="400">
+   <tr>
+        <tr colspan ="5" align="center">Bank Details</tr>
+       <br><br>
+   </tr>
+
+        <tr>
+            <th>Bankname</th><td><input type="text" name="bankname" value="{{detail1.Bankname}}"></td>
+        </tr>
+        <tr>
+            <th>Address</th><td><input type="text" name="address" value="{{detail1.Address}}"></td>
+
+        </tr>
+  <tr>
+            <th>Phone</th><td><input type="text" name="phone" value="{{ detail1.Phone }}"></td>
+
+        </tr>
+  <tr>
+            <th>Email</th><td><input type="text" name="email" value="{{ detail1.Email }}"></td>
+
+        </tr>
+  <tr>
+            <th>Apositive</th><td><input type="text" name="apos" value="{{ detail1.Apositive }}"></td>
+
+        </tr>
+  <tr>
+            <th>Anegative</th><td><input type="text" name="aneg" value="{{ detail1.Anegative }}"></td>
+
+        </tr>
+  <tr>
+            <th>Bpositive</th><td><input type="text" name="bpos" value="{{ detail1.Bpositive }}"></td>
+
+        </tr>
+  <tr>
+            <th>Bnegative</th><td><input type="text" name="bneg" value="{{ detail1.Bnegative }}"></td>
+
+        </tr>
+           </tr>
+  <tr>
+            <th>ABpositive</th><td><input type="text" name="abpos" value="{{ detail1.ABpositive }}"></td>
+
+        </tr>
+           </tr>
+  <tr>
+            <th>ABnegative</th><td><input type="text" name="abneg" value="{{ detail1.ABnegative }}"></td>
+
+        </tr>
+           </tr>
+  <tr>
+            <th>Opositive</th><td><input type="text" name="opos" value="{{ detail1.Opositive }}"></td>
+
+        </tr>
+           </tr>
+  <tr>
+            <th>Onegative</th><td><input type="text" name="Oneg" value="{{ detail1.Onegative }}"></td>
+
+        </tr>
+
+   <tr>
+        <td colspan="2" align="center" >
+                <button type="submit">Update</button>
+            </td>
+    </tr>
+</table>
+</form>
+    <br><br>
+{% include 'loginapp/footer.html' %}
